@@ -3,7 +3,9 @@ import { Button } from "quarks-ui-components";
 function App() {
   return (
     <>
-      <Button>test</Button>
+      <Button variant="solid" size="lg" roundness="lg">
+        test
+      </Button>
     </>
   );
 }
