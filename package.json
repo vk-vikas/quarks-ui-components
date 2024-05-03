@@ -1,6 +1,6 @@
 {
   "name": "quarks-ui-components",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "author": "vikas",
   "license": "ISC",
   "type": "module",
@@ -13,8 +13,10 @@
     ".": {
       "import": "./dist/quarks-ui-components.js",
       "require": "./dist/quarks-ui-components.umd.cjs"
-    }
+    },
+    "./dist/style.css": "./dist/style.css"
   },
+  "sideEffects": false,
   "scripts": {
     "dev": "vite",
     "prebuild": "rm -rf dist",
