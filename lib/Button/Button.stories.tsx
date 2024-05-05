@@ -10,9 +10,9 @@ type Story = StoryObj<typeof Button>;
 
 export const FirstStory: Story = {
   args: {
-    variant: "solid",
+    variant: "solid_just_blue",
     size: "md",
-    roundness: "md",
+    roundness: "sm",
     children: "click me pls",
   },
 };
