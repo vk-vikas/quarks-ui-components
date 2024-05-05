@@ -1,5 +1,5 @@
 import { VariantProps, cva } from "class-variance-authority";
-import { HtmlHTMLAttributes, ReactNode } from "react";
+import { HtmlHTMLAttributes, ReactNode, forwardRef } from "react";
 import cn from "../cn";
 import { btnTheme } from "./Button.constant";
 
@@ -9,32 +9,40 @@ interface ButtonProps
   children: ReactNode;
 }
 
-export const Button = ({
-  children,
-  variant,
-  size,
-  roundness,
-  movement,
-  className,
-  ...props
-}: ButtonProps) => {
-  return (
-    <button
-      {...props}
-      className={cn(
-        buttonVariants({
-          variant,
-          size,
-          roundness,
-          movement,
-          className,
-        })
-      )}
-    >
-      {children}
-    </button>
-  );
-};
+export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
+  (
+    {
+      children,
+      variant,
+      size,
+      roundness,
+      movement,
+      isDisabled,
+      className,
+      ...props
+    },
+    ref
+  ) => {
+    return (
+      <button
+        {...props}
+        ref={ref}
+        className={cn(
+          buttonVariants({
+            variant,
+            size,
+            roundness,
+            movement,
+            isDisabled,
+            className,
+          })
+        )}
+      >
+        {children}
+      </button>
+    );
+  }
+);
 
 const buttonVariants = cva("box-border gap-2 transition ease-in-out delay-50", {
   variants: {
@@ -63,6 +71,9 @@ const buttonVariants = cva("box-border gap-2 transition ease-in-out delay-50", {
     movement: {
       active: "hover:-translate-y-px",
       lazy: "",
+    },
+    isDisabled: {
+      true: "opacity-60 pointer-events-none",
     },
   },
   defaultVariants: {
