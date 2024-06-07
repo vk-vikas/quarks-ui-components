@@ -45,7 +45,7 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
 );
 
 const buttonVariants = cva(
-  "box-border transition ease-in-out delay-50 flex gap-2 justify-center align-center",
+  "box-border transition ease-in-out delay-50 inline ",
   {
     variants: {
       variant: {

@@ -3,7 +3,7 @@ import { Button, Input } from "quarks-ui-components";
 function App() {
   return (
     <div>
-      <div className="m-5">
+      <div className="m-5 flex gap-6 ">
         <Input
           label="username"
           isInvalid={true}
