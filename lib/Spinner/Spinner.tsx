@@ -7,7 +7,7 @@ interface SpinnerProps extends VariantProps<typeof spinnerVariants> {
   textColor?: string;
 }
 
-const Spinner = ({
+export const Spinner = ({
   size,
   variant,
   label,
@@ -51,4 +51,3 @@ const spinnerVariants = cva(
     },
   }
 );
-export default Spinner;
