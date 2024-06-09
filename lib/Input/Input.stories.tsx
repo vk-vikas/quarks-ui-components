@@ -11,6 +11,7 @@ type Story = StoryObj<typeof Input>;
 export const simple: Story = {
   args: {
     label: "username",
+    bgColor: "blue-300",
   },
 };
 
@@ -18,6 +19,7 @@ export const required: Story = {
   args: {
     label: "username",
     isRequired: true,
+    bgColor: "blue-300",
   },
 };
 
@@ -26,13 +28,15 @@ export const errorMssg: Story = {
     label: "email",
     isInvalid: true,
     errorMessage: "not valid email",
+    bgColor: "blue-300",
+    textColor: "blue-700",
   },
 };
 
 export const disabled: Story = {
   args: {
     label: "username",
-    variant: "just_blue",
+    bgColor: "red-500",
     isDisabled: true,
   },
 };

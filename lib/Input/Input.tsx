@@ -11,6 +11,8 @@ interface InputProps
   isInvalid?: boolean;
   errorMessage?: string;
   isRequired?: boolean;
+  bgColor?: string;
+  textColor?: string;
 }
 
 export const Input = ({
@@ -21,16 +23,19 @@ export const Input = ({
   errorMessage,
   isRequired,
   isDisabled,
-  variant,
   roundness,
   inputSize,
+  bgColor,
+  textColor,
   ...props
 }: InputProps) => {
+  let dynamicClass = `bg-${bgColor} text-${textColor}`;
   return (
     <div className="inline-block">
       <div
         className={cn(
-          inputVariants({ inputSize, variant, roundness, isDisabled })
+          inputVariants({ inputSize, roundness, isDisabled }),
+          dynamicClass
         )}
       >
         <div className="p-2">
@@ -48,7 +53,6 @@ export const Input = ({
         </div>
       </div>
       <div className="px-5 text-red-500">
-        {/* {validate ? validate(value) : <p className="">empty</p>} */}
         {isInvalid ? (
           <p className="">{errorMessage}</p>
         ) : (
@@ -59,14 +63,8 @@ export const Input = ({
   );
 };
 
-const inputVariants = cva("mx-2 mt-1 overflow-hidden", {
+const inputVariants = cva("mx-2 my-1 overflow-hidden", {
   variants: {
-    variant: {
-      light_blue: "bg-blue-200",
-      just_blue: "bg-blue-500 text-white",
-      black: "bg-gray-900 text-white",
-      white: "bg-white text-black",
-    },
     inputSize: {
       sm: "text-sm w-[280px] ",
       md: "text-md w-[320px]",
@@ -83,7 +81,6 @@ const inputVariants = cva("mx-2 mt-1 overflow-hidden", {
     },
   },
   defaultVariants: {
-    variant: "light_blue",
     inputSize: "md",
     roundness: "md",
   },
