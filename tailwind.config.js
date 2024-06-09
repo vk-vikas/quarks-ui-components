@@ -8,7 +8,7 @@ export default {
   safelist: [
     {
       pattern:
-        /(bg|text|border-t)-(slate|gray|zinc|neutral|stone|red|orange|amber|yellow|lime|green|emerald|teal|cyan|sky|blue|indigo|violet|purple|fuchsia|pink|rose)-(100|200|300|400|500|600|700|800|900)/,
+        /(bg|text|border-t|border)-(slate|gray|zinc|neutral|stone|red|orange|amber|yellow|lime|green|emerald|teal|cyan|sky|blue|indigo|violet|purple|fuchsia|pink|rose)-(100|200|300|400|500|600|700|800|900)/,
     },
     {
       pattern: /bg-(black|white)/,
@@ -16,5 +16,6 @@ export default {
     {
       pattern: /text-(black|white)/,
     },
+    { pattern: /bg-./, variants: ["hover"] },
   ],
 };

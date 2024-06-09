@@ -4,7 +4,7 @@ function App() {
   return (
     <div>
       <div className="m-5 flex gap-6 ">
-        <Input
+        {/* <Input
           label="username"
           isInvalid={true}
           errorMessage="incorrect"
@@ -12,7 +12,7 @@ function App() {
         />
         <Button variant="outline_dark_red" movement="active">
           test
-        </Button>
+        </Button> */}
       </div>
     </div>
   );
