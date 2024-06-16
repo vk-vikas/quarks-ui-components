@@ -17,7 +17,7 @@ export const Spinner = ({
   const varColor = `border-t-${spinnerColor}`;
   const varTextColor = `text-${textColor}`;
   return (
-    <div className="m-2 inline-block text-center">
+    <div className="m-2 inline-block text-center" data-testid="spinner-wrapper">
       <div
         className={cn(
           spinnerVariants({ size, variant }),
