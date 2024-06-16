@@ -48,6 +48,7 @@ export const Modal = ({
 
   return (
     <div
+      data-testid="modal-wrapper"
       className={`${isOpen ? "" : "hidden"} fixed z-10 h-screen w-screen bg-gray-900/50 top-0 right-0 `}
     >
       <div
@@ -58,15 +59,20 @@ export const Modal = ({
         )}
       >
         {/* modal header */}
-        <div className="px-4 py-4 font-semibold ">{headerText}</div>
+        <div className="px-4 py-4 font-semibold" id="modal-header">
+          {headerText}
+        </div>
 
         {/* modal body  */}
-        <div className="py-6 px-4 flex flex-wrap overflow-x-auto grow">
+        <div
+          className="py-6 px-4 flex flex-wrap overflow-x-auto grow"
+          id="modal-body"
+        >
           {children}
         </div>
 
         {/* modal footer */}
-        <div className="px-4 py-4 flex justify-end gap-2">
+        <div className="px-4 py-4 flex justify-end gap-2" id="modal-footer">
           <Button
             bgColor={closeBtnBgColor ? closeBtnBgColor : "red-500"}
             variant="outline"
