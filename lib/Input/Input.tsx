@@ -33,6 +33,7 @@ export const Input = ({
   return (
     <div className="inline-block">
       <div
+        data-testid="input-wrapper"
         className={cn(
           inputVariants({ inputSize, roundness, isDisabled }),
           dynamicClass
@@ -52,7 +53,7 @@ export const Input = ({
           />
         </div>
       </div>
-      <div className="px-5 text-red-500">
+      <div className="px-5 text-red-500" data-testid="error-wrapper">
         {isInvalid ? (
           <p className="">{errorMessage}</p>
         ) : (
